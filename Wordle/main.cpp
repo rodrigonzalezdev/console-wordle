@@ -17,19 +17,21 @@ int main()
 
 	const std::optional<std::vector<std::string>> words = readWords(filePath);
 
-	if (words.has_value())
-	{
-		std::cout << words->size() << '\n';
-	}
-	else
+	if (!words.has_value())
 	{
 		std::cerr << std::format("Couldn't open the file {}\n", filePath);
 
 		return 1;
 	}
 
-	
-	const std::string answer = "CRANE";
+	if (words->empty())
+	{
+		std::cerr << std::format("{} doesn't contain any {}-letter words.\n", filePath, wordLength);
+
+		return 1;
+	}
+
+	const std::string answer = words->at(0);
 
 	bool guessedCorrectly = false;
 
