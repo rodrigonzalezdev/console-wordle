@@ -2,7 +2,6 @@
 
 #include <cctype>
 
-
 std::string trim(const std::string& text)
 {
 	const std::string whitespace = " \t\r\n";

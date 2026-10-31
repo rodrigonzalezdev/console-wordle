@@ -2,7 +2,6 @@
 
 #include <cctype>
 
-
 WordStatus validateWord(const std::string& word)
 {
 	if (word.size() != wordLength) return WordStatus::WordLengthError;

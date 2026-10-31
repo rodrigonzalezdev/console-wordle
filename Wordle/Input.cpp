@@ -5,7 +5,6 @@
 #include <iostream>
 #include <format>
 
-
 std::string readGuess()
 {
 	std::string guess;

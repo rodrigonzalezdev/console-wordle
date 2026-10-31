@@ -9,7 +9,7 @@
 #include <array>
 #include <vector>
 #include <format>
-
+#include <random>
 
 int main()
 {
@@ -31,7 +31,11 @@ int main()
 		return 1;
 	}
 
-	const std::string answer = words->at(0);
+	std::random_device seedSource;
+
+	std::mt19937 engine(seedSource());
+
+	const std::string answer = pickRandomWord(*words, engine);
 
 	bool guessedCorrectly = false;
 

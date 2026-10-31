@@ -1,6 +1,5 @@
 #include "Score.h"
 
-
 constexpr char usedLetter = '_';
 
 std::array<LetterState, wordLength> scoreGuess(const std::string& guess, const std::string& answer)

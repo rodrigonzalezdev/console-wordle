@@ -4,7 +4,6 @@
 
 #include <fstream>
 
-
 std::optional<std::vector<std::string>> readWords(const std::string& filePath)
 {
 	std::vector<std::string> words;
@@ -27,4 +26,13 @@ std::optional<std::vector<std::string>> readWords(const std::string& filePath)
 	}
 
 	return words;
+}
+
+std::string pickRandomWord(const std::vector<std::string>& words, std::mt19937& engine)
+{
+	std::uniform_int_distribution<std::size_t> indexDistribution(0, words.size() - 1);
+
+	const std::size_t index = indexDistribution(engine);
+
+	return words[index];
 }
