@@ -37,3 +37,23 @@ std::string readGuess()
 
 	return guess;
 }
+
+bool askPlayAgain()
+{
+	std::cout << "\nDo you want to play again? Type 'y/yes' to play again or anything else to quit: ";
+
+	std::string response;
+
+	std::getline(std::cin, response);
+
+	response = trim(response);
+
+	toUpper(response);
+
+	if (response != "Y" && response != "YES") return false;
+
+	std::cout << "\nAlright here we go!\n\n";
+
+	return true;
+
+}

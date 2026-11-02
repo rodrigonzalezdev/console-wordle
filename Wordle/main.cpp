@@ -1,15 +1,14 @@
-#include "Input.h"
-#include "Score.h"
-#include "Display.h"
-#include "GameRules.h"
 #include "WordList.h"
+#include "GameRules.h"
+#include "Game.h"
+#include "Input.h"
 
 #include <iostream>
 #include <string>
-#include <array>
 #include <vector>
 #include <format>
 #include <random>
+#include <optional>
 
 int main()
 {
@@ -35,35 +34,13 @@ int main()
 
 	std::mt19937 engine(seedSource());
 
-	const std::string answer = pickRandomWord(*words, engine);
+	std::cout << "Let's play some Wordle!\n\n";
 
-	bool guessedCorrectly = false;
-
-	for (std::size_t attempt = 0; attempt < maxAttempts; ++attempt)
+	do
 	{
-		std::cout << "Attempt " << attempt + 1 << '/' << maxAttempts << '\n';
+		playGame(*words, engine);
 
-		const std::string guess = readGuess();
-
-		const std::array<LetterState, wordLength> guessResult = scoreGuess(guess, answer);
-
-		printGuess(guess, guessResult);
-
-		if (guess == answer)
-		{
-			guessedCorrectly = true;
-
-			if (attempt == 0) std::cout << "That is correct, great job! You got it on the first try!\n"; 
-			else std::cout << "That is correct, great job! You got it in " << attempt + 1 << " tries!\n";
-
-			break;
-		}
-	}
-
-	if (!guessedCorrectly)
-	{
-		std::cout << "That was close, better luck next time! The answer was: " << answer << '\n';
-	}
+	} while (askPlayAgain());
 
 	return 0;
 }
