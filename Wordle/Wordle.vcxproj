@@ -143,28 +143,28 @@
     </Manifest>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Console.cpp" />
-    <ClCompile Include="Display.cpp" />
-    <ClCompile Include="Game.cpp" />
-    <ClCompile Include="GameRules.cpp" />
-    <ClCompile Include="Input.cpp" />
-    <ClCompile Include="main.cpp" />
-    <ClCompile Include="Score.cpp" />
-    <ClCompile Include="StringUtils.cpp" />
-    <ClCompile Include="WordList.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="Console.h" />
-    <ClInclude Include="Display.h" />
-    <ClInclude Include="Game.h" />
-    <ClInclude Include="GameRules.h" />
-    <ClInclude Include="Input.h" />
-    <ClInclude Include="Score.h" />
-    <ClInclude Include="StringUtils.h" />
-    <ClInclude Include="WordList.h" />
-  </ItemGroup>
-  <ItemGroup>
     <CopyFileToFolders Include="words.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\Console.cpp" />
+    <ClCompile Include="src\Display.cpp" />
+    <ClCompile Include="src\Game.cpp" />
+    <ClCompile Include="src\GameRules.cpp" />
+    <ClCompile Include="src\Input.cpp" />
+    <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\Score.cpp" />
+    <ClCompile Include="src\StringUtils.cpp" />
+    <ClCompile Include="src\WordList.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\Console.h" />
+    <ClInclude Include="src\Display.h" />
+    <ClInclude Include="src\Game.h" />
+    <ClInclude Include="src\GameRules.h" />
+    <ClInclude Include="src\Input.h" />
+    <ClInclude Include="src\Score.h" />
+    <ClInclude Include="src\StringUtils.h" />
+    <ClInclude Include="src\WordList.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
