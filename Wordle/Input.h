@@ -5,3 +5,5 @@
 std::string readGuess();
 
 bool askPlayAgain();
+
+void waitForEnter();

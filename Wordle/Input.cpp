@@ -57,3 +57,9 @@ bool askPlayAgain()
 	return true;
 
 }
+
+void waitForEnter()
+{
+	std::cout << "\nPress ENTER to exit...";
+	std::cin.get();
+}

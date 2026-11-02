@@ -24,7 +24,9 @@ int main()
 
 	if (!words.has_value())
 	{
-		std::cerr << std::format("Couldn't open the file {}\n", filePath);
+		std::cerr << std::format("Couldn't open {}\n", filePath);
+
+		waitForEnter();
 
 		return 1;
 	}
@@ -32,6 +34,8 @@ int main()
 	if (words->empty())
 	{
 		std::cerr << std::format("{} doesn't contain any {}-letter words.\n", filePath, wordLength);
+
+		waitForEnter();
 
 		return 1;
 	}
