@@ -2,6 +2,7 @@
 #include "GameRules.h"
 #include "Game.h"
 #include "Input.h"
+#include "Console.h"
 
 #include <iostream>
 #include <string>
@@ -12,6 +13,11 @@
 
 int main()
 {
+	if (!enableConsoleColors())
+	{
+		std::cerr << "Warning: couldn't enable console colors, so letter tiles may not display correctly.\n";
+	}
+
 	const std::string filePath = "words.txt";
 
 	const std::optional<std::vector<std::string>> words = readWords(filePath);
